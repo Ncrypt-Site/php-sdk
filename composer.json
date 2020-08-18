@@ -20,7 +20,8 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-openssl": "*"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master",
