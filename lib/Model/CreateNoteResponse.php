@@ -167,11 +167,11 @@ class CreateNoteResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
+        $this->container['error'] = $data['error'] ?? null;
+        $this->container['meta'] = $data['meta'] ?? null;
     }
 
     /**
