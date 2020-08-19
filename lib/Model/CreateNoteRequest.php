@@ -189,9 +189,9 @@ class CreateNoteRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['self_destruct'] = isset($data['self_destruct']) ? $data['self_destruct'] : null;
-        $this->container['destruct_after_opening'] = isset($data['destruct_after_opening']) ? $data['destruct_after_opening'] : null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['self_destruct'] = $data['self_destruct'] ?? null;
+        $this->container['destruct_after_opening'] = $data['destruct_after_opening'] ?? null;
     }
 
     /**
