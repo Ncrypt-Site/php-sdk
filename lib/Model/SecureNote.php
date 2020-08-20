@@ -17,7 +17,7 @@ class SecureNote
      */
     public function getKey()
     {
-        return $this->key;
+        return base64_encode($this->key);
     }
 
     /**
