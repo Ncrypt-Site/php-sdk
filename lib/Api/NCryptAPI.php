@@ -35,9 +35,11 @@ use NCrypt\Client\Model\CreateNoteRequest;
 use NCrypt\Client\ObjectSerializer;
 use NCrypt\Client\Model\CreateNoteResponse;
 use NCrypt\Client\Model\ResponseError;
+use RuntimeException;
+use stdClass;
 use function GuzzleHttp\Psr7\build_query;
 
-class DefaultApi
+class NCryptAPI
 {
     /**
      * @var ClientInterface
@@ -178,7 +180,7 @@ class DefaultApi
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'Missing the required parameter $body when calling notePost'
             );
         }
@@ -209,7 +211,7 @@ class DefaultApi
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
             // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+            if ($httpBody instanceof stdClass && $headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($httpBody);
             }
         } elseif (count($formParams) > 0) {
@@ -256,7 +258,7 @@ class DefaultApi
      * Create http client option
      *
      * @return array of http client options
-     * @throws \RuntimeException on file opening failure
+     * @throws RuntimeException on file opening failure
      */
     protected function createHttpClientOption(): array
     {
@@ -264,7 +266,7 @@ class DefaultApi
         if ($this->config->getDebug()) {
             $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
             if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
+                throw new RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
             }
         }
 
