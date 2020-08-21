@@ -7,7 +7,7 @@
         "sdk",
         "api"
     ],
-    "homepage": "http://ncrypt.site",
+    "homepage": "https://ncrypt.site",
     "license": "AGPL-3.0-or-later",
     "authors": [
         {
@@ -20,7 +20,7 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^7.0",
+        "guzzlehttp/guzzle": "^6.0",
         "ext-openssl": "*"
     },
     "require-dev": {
