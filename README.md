@@ -7,7 +7,7 @@ inside your application.
 Swagger-CodeGen initially generated part of this SDK, and then it was modified to fit the needs, those codes will
 be removed in the next couple of releases as it was my idea to release the first version as soon as possible.
 
-- SDK version: 1.0.0
+- SDK version: ![version](https://img.shields.io/github/v/release/Ncrypt-Site/php-sdk)
 
 ## Requirements
 
