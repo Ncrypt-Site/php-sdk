@@ -13,7 +13,7 @@ class AESCryptoTest extends TestCase
     {
         $crypto = new AESCrypto();
         $secureNoteResult = $crypto->secureNoteRequest("this is a test note");
-        $this->assertInstanceOf(SecureNote::class,$secureNoteResult);
+        $this->assertNotNull($secureNoteResult);
     }
 
     public function testIvAndKeyLengthInSecureNoteRequest()
@@ -22,10 +22,10 @@ class AESCryptoTest extends TestCase
         $secureNoteResult = $crypto->secureNoteRequest("this is a test note");
 
         $lengthOfIv = strlen($secureNoteResult->getIv());
-        $this->assertEquals(16,$lengthOfIv);
+        $this->assertEquals(16, $lengthOfIv);
 
         $lengthOfKey = strlen($secureNoteResult->getKey());
-        $this->assertEquals(44,$lengthOfKey);
+        $this->assertEquals(44, $lengthOfKey);
 
     }
 
